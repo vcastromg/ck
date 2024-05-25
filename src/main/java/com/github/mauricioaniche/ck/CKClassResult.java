@@ -60,12 +60,6 @@ public class CKClassResult {
     private int numberOfDefaultFields;
     private int numberOfFinalFields;
     private int numberOfSynchronizedFields;
-    /**
-     * -- GETTER --
-     * public/static/private and other org.eclipse.jdt.core.dom.Modifier modifiers
-     *
-     * @return
-     */
     private int modifiers;
     private int numberOfLogStatements;
     private float tightClassCohesion;
