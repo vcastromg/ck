@@ -7,7 +7,6 @@ import com.github.mauricioaniche.ck.metric.NOCExtras;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 public class CKClassResult {
@@ -67,10 +66,8 @@ public class CKClassResult {
      *
      * @return
      */
-
     private int modifiers;
     private int numberOfLogStatements;
-
     private float tightClassCohesion;
     private float looseClassCohesion;
 
@@ -88,7 +85,6 @@ public class CKClassResult {
             NOCExtras extras = NOCExtras.getInstance();
             this.setNoc(extras.getNocValueByName(this.className));
         }
-
         return this.noc;
     }
 
@@ -101,22 +97,18 @@ public class CKClassResult {
     }
 
     public int getFanin() {
-
         if (this.fanin == -1) {
             CouplingExtras extras = CouplingExtras.getInstance();
             this.setFanin(extras.getValueFanInClass(this.className));
         }
-
         return fanin;
     }
 
     public int getFanout() {
-
         if (this.fanout == -1) {
             CouplingExtras extras = CouplingExtras.getInstance();
             this.setFanout(extras.getValueFanOutClass(this.className));
         }
-
         return fanout;
     }
 
@@ -157,9 +149,7 @@ public class CKClassResult {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CKClassResult that = (CKClassResult) o;
-        return file.equals(that.file) &&
-                className.equals(that.className) &&
-                type.equals(that.type);
+        return file.equals(that.file) && className.equals(that.className) && type.equals(that.type);
     }
 
     @Override
