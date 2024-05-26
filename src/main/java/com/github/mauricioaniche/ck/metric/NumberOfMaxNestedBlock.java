@@ -7,9 +7,7 @@ import org.eclipse.jdt.core.dom.*;
 import java.util.Stack;
 
 public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
-
-	private int current = 0;
-	private int max = 0;
+	private Node nodeInfo = new Node(0, 0);
 	private Stack<ASTNode> currentNode = new Stack<>();
 	private Stack<Boolean> blocks = new Stack<>();
 	private Stack<Boolean> nodes = new Stack<>();
@@ -23,7 +21,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 		// for their existence at every node later on...
 		// if they do not exist, we +1 in the node.
 		if(currentNode.empty() || !(currentNode.peek() instanceof SwitchCase)) {
-			plusOne();
+			nodeInfo.plusOne();
 			blocks.push(true);
 		} else {
 			blocks.push(false);
@@ -38,7 +36,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getBody());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -53,7 +51,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getBody());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -67,7 +65,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getBody());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -81,7 +79,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getBody());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -93,7 +91,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		currentNode.push(node);
 		nodes.push(true);
-		plusOne();
+		nodeInfo.plusOne();
 	}
 
 	@Override
@@ -109,7 +107,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getBody());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -123,7 +121,7 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 		boolean containsBlock = containsBlock(node.getThenStatement());
 		if(!containsBlock) {
-			plusOne();
+			nodeInfo.plusOne();
 			nodes.push(true);
 		} else {
 			nodes.push(false);
@@ -133,73 +131,59 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 	@Override
 	public void endVisit(Block node) {
-		Boolean pop = blocks.pop();
-		if(pop)
-			current--;
+		nodeInfo.popBlock(blocks);
 
 		currentNode.pop();
 	}
 
 	@Override
 	public void endVisit(IfStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	private boolean containsBlock(Statement body) {
 		return (body instanceof Block);
 	}
 
-
-	private void plusOne() {
-		current++;
-		max = Math.max(current, max);
-	}
-
-	private void popBlock() {
-		Boolean pop = nodes.pop();
-		if(pop)
-			current--;
-	}
-
 	@Override
 	public void endVisit(CatchClause node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void endVisit(WhileStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void endVisit(DoStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void endVisit(EnhancedForStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void endVisit(ForStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void endVisit(SwitchStatement node) {
-		popBlock();
+		nodeInfo.popBlock(nodes);
 	}
 
 	@Override
 	public void setResult(CKMethodResult result) {
 		// -1 because the method block is considered a block.
 		// and we avoid 0, that can happen in case of enums
-		result.setMaxNestedBlocks(Math.max(0, max - 1));
+		result.setMaxNestedBlocks(Math.max(0, (nodeInfo.getMax() - 1)));
 	}
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.othersResult.setMaxNestedBlocks(Math.max(0, max - 1));
+		result.othersResult.setMaxNestedBlocks(Math.max(0, (nodeInfo.getMax()) - 1));
 	}
 }
