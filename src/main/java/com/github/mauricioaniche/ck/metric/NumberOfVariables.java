@@ -19,7 +19,7 @@ public class NumberOfVariables implements CKASTVisitor, ClassLevelMetric, Method
 	@Override
 	public void setResult(CKClassResult result) {
 
-		result.setVariablesQty(qty);
+		result.othersResult.setVariablesQty(qty);
 
 	}
 }

@@ -240,7 +240,7 @@ public class CBO implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
 	@Override
 	public void setResult(CKClassResult result) {
 		clean();
-		result.setCbo(getValue());
+		result.ooResult.setCbo(getValue());
 	}
 
 	// given that some resolvings might fail, we remove types that might

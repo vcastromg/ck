@@ -65,7 +65,7 @@ public class LCOM implements CKASTVisitor, ClassLevelMetric {
 				if (intersection.size() == 0) lcom++;
 				else lcom--;
 		    }
-		result.setLcom(lcom > 0 ? lcom : 0);
+		result.ooResult.setLcom(lcom > 0 ? lcom : 0);
 	}
 
 }

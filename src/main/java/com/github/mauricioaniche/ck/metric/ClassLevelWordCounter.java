@@ -42,6 +42,6 @@ public class ClassLevelWordCounter implements CKASTVisitor, ClassLevelMetric {
 	@Override
 	public void setResult(CKClassResult result) {
 		int qtyOfUniqueWords = WordCounter.wordsIn(classSourceCode).size();
-		result.setUniqueWordsQty(qtyOfUniqueWords);
+		result.othersResult.setUniqueWordsQty(qtyOfUniqueWords);
 	}
 }

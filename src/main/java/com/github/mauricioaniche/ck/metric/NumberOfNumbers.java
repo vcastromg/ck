@@ -20,6 +20,6 @@ public class NumberOfNumbers implements CKASTVisitor, ClassLevelMetric, MethodLe
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setNumbersQty(qty);
+		result.othersResult.setNumbersQty(qty);
 	}
 }

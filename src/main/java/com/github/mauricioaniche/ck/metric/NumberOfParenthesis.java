@@ -20,6 +20,6 @@ public class NumberOfParenthesis implements CKASTVisitor, ClassLevelMetric, Meth
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setParenthesizedExpsQty(qty);
+		result.othersResult.setParenthesizedExpsQty(qty);
 	}
 }

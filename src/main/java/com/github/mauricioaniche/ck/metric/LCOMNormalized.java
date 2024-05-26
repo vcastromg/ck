@@ -101,7 +101,7 @@ public class LCOMNormalized implements CKASTVisitor, ClassLevelMetric {
 		if(numberOfAttributes > 0)
 			lcomNormalized = (((float) 1) * sum) / numberOfAttributes;
 		
-		result.setLcomNormalized(lcomNormalized);
+		result.ooResult.setLcomNormalized(lcomNormalized);
 		
 	}	
 	

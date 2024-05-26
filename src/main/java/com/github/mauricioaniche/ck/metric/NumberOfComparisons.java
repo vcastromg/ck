@@ -26,6 +26,6 @@ public class NumberOfComparisons implements CKASTVisitor, ClassLevelMetric, Meth
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setComparisonsQty(qty);
+		result.othersResult.setComparisonsQty(qty);
 	}
 }

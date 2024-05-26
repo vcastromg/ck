@@ -28,6 +28,6 @@ public class NumberOfAssignments implements CKASTVisitor, ClassLevelMetric, Meth
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setAssignmentsQty(qty);
+		result.othersResult.setAssignmentsQty(qty);
 	}
 }

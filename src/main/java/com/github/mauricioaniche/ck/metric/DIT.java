@@ -29,7 +29,7 @@ public class DIT implements CKASTVisitor, ClassLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setDit(dit);
+		result.ooResult.setDit(dit);
 	}
 
 }

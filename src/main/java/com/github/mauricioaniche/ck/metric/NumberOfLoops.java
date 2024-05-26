@@ -32,6 +32,6 @@ public class NumberOfLoops implements CKASTVisitor, ClassLevelMetric, MethodLeve
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setLoopQty(qty);
+		result.othersResult.setLoopQty(qty);
 	}
 }

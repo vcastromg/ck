@@ -19,7 +19,7 @@ public class NumberOfReturns implements CKASTVisitor, ClassLevelMetric, MethodLe
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setReturnQty(qty);
+		result.othersResult.setReturnQty(qty);
 
 	}
 }

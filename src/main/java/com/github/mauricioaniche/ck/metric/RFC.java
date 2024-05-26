@@ -21,7 +21,7 @@ public class RFC implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setRfc(methodInvocations.size());
+		result.ooResult.setRfc(methodInvocations.size());
 	}
 
 	@Override

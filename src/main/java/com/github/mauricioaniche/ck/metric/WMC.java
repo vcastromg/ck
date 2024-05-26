@@ -188,7 +188,7 @@ public class WMC implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setWmc(cc);
+		result.ooResult.setWmc(cc);
 	}
 
 	@Override

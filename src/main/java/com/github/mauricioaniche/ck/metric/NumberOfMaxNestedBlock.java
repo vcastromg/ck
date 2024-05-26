@@ -200,6 +200,6 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setMaxNestedBlocks(Math.max(0, max - 1));
+		result.othersResult.setMaxNestedBlocks(Math.max(0, max - 1));
 	}
 }

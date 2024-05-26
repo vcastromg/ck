@@ -32,6 +32,6 @@ public class NumberOfMathOperators implements CKASTVisitor, ClassLevelMetric, Me
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setMathOperationsQty(qty);
+		result.othersResult.setMathOperationsQty(qty);
 	}
 }

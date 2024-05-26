@@ -20,6 +20,6 @@ public class NumberOfTryCatches implements CKASTVisitor, ClassLevelMetric, Metho
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setTryCatchQty(qty);
+		result.othersResult.setTryCatchQty(qty);
 	}
 }

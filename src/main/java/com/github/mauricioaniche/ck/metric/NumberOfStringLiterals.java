@@ -19,6 +19,6 @@ public class NumberOfStringLiterals implements CKASTVisitor, ClassLevelMetric, M
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setStringLiteralsQty(qty);
+		result.othersResult.setStringLiteralsQty(qty);
 	}
 }

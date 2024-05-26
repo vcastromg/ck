@@ -18,7 +18,7 @@ public class NOSI implements CKASTVisitor, ClassLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setNosi(count);
+		result.othersResult.setNosi(count);
 	}
 
 }
