@@ -19,22 +19,22 @@ public class NOCTest extends BaseTest{
 	@Test
 	public void shouldDetectChildren() {
 		CKClassResult a = report.get("dit.A");
-		Assertions.assertEquals(1, a.getNoc());
+		Assertions.assertEquals(1, a.ooResult.getNoc());
 		
 		CKClassResult b = report.get("dit.B");
-		Assertions.assertEquals(2, b.getNoc());
+		Assertions.assertEquals(2, b.ooResult.getNoc());
 		
 		CKClassResult c = report.get("dit.C");
-		Assertions.assertEquals(1, c.getNoc());
+		Assertions.assertEquals(1, c.ooResult.getNoc());
 		
 		CKClassResult d = report.get("dit.D");
-		Assertions.assertEquals(0, d.getNoc());
+		Assertions.assertEquals(0, d.ooResult.getNoc());
 		
 		CKClassResult e = report.get("dit.C2");
-		Assertions.assertEquals(0, e.getNoc());
+		Assertions.assertEquals(0, e.ooResult.getNoc());
 		
 		CKClassResult f = report.get("dit.X");
-		Assertions.assertEquals(0, f.getNoc());
+		Assertions.assertEquals(0, f.ooResult.getNoc());
 	}
 	
 }

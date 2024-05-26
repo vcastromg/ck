@@ -22,7 +22,7 @@ public class NumberOfAssignmentsTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("assignments.Assignments");
 
-		Assertions.assertEquals(8, a.getAssignmentsQty());
+		Assertions.assertEquals(8, a.othersResult.getAssignmentsQty());
 
 		Assertions.assertEquals(5, a.getMethod("m1/0").get().getAssignmentsQty());
 		Assertions.assertEquals(3, a.getMethod("m2/0").get().getAssignmentsQty());

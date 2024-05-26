@@ -18,7 +18,7 @@ public class NumberOfMathOperationsTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("math.Math");
 
-		Assertions.assertEquals(5, a.getMathOperationsQty());
+		Assertions.assertEquals(5, a.othersResult.getMathOperationsQty());
 
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getMathOperationsQty());
 		Assertions.assertEquals(3, a.getMethod("m2/0").get().getMathOperationsQty());

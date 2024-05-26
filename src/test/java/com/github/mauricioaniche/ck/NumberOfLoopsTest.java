@@ -18,7 +18,7 @@ public class NumberOfLoopsTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("loop.Loop");
 
-		Assertions.assertEquals(5, a.getLoopQty());
+		Assertions.assertEquals(5, a.othersResult.getLoopQty());
 
 		Assertions.assertEquals(1, a.getMethod("m1/0").get().getLoopQty());
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getLoopQty());
@@ -32,7 +32,7 @@ public class NumberOfLoopsTest extends BaseTest {
 	public void infiniteLoops() {
 		CKClassResult a = report.get("loop.Loop2");
 
-		Assertions.assertEquals(6, a.getLoopQty());
+		Assertions.assertEquals(6, a.othersResult.getLoopQty());
 		Assertions.assertEquals(0, a.getMethod("m0/0").get().getLoopQty());
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getLoopQty());
 		Assertions.assertEquals(1, a.getMethod("m2/0").get().getLoopQty());

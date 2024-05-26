@@ -40,10 +40,10 @@ public class EnumTest extends BaseTest {
 		CKClassResult b = report.get("enumd.EnumDecl3");
 
 		Assertions.assertEquals(1, b.getMethod("getX/0").get().getInnerClassesQty());
-		Assertions.assertEquals(2, b.getInnerClassesQty());
+		Assertions.assertEquals(2, b.othersResult.getInnerClassesQty());
 
 		CKClassResult sc = report.get("enumd.EnumDecl3$1Other");
-		Assertions.assertEquals(4, sc.getNumberOfMethods());
+		Assertions.assertEquals(4, sc.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals(3, sc.getMethod("x1/0").get().getWmc());
 		Assertions.assertEquals(2, sc.getMethod("x1/0").get().getVariablesQty());
 

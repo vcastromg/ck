@@ -17,25 +17,25 @@ public class RFCTest extends BaseTest {
 	@Test
 	public void countMethodInvocations() {
 		CKClassResult a = report.get("rfc.GO");
-		Assertions.assertEquals(3, a.getRfc());
+		Assertions.assertEquals(3, a.ooResult.getRfc());
 	}
 
 	@Test
 	public void countSuperInvocations() {
 		CKClassResult a = report.get("rfc.GO3");
-		Assertions.assertEquals(2, a.getRfc());
+		Assertions.assertEquals(2, a.ooResult.getRfc());
 	}
 
 	@Test
 	public void notPossibleToDifferentiateTypesWithStaticAnalysis() {
 		CKClassResult a = report.get("rfc.RFC3");
-		Assertions.assertEquals(1, a.getRfc());
+		Assertions.assertEquals(1, a.ooResult.getRfc());
 	}
 
 	@Test
 	public void doesNotCountConstructorInvocations() {
 		CKClassResult a = report.get("rfc.RFC2");
-		Assertions.assertEquals(0, a.getRfc());
+		Assertions.assertEquals(0, a.ooResult.getRfc());
 	}
 
 	@Test
@@ -50,13 +50,13 @@ public class RFCTest extends BaseTest {
 	@Test
 	public void noMethodInvocation(){
 		CKClassResult a = report.get("rfc.RFC4");
-		Assertions.assertEquals(0, a.getRfc());
+		Assertions.assertEquals(0, a.ooResult.getRfc());
 	}
 
 	@Test
 	public void functionalInterface(){
 		CKClassResult a = report.get("rfc.RFC5");
-		Assertions.assertEquals(3, a.getRfc());
+		Assertions.assertEquals(3, a.ooResult.getRfc());
 
 	}
 

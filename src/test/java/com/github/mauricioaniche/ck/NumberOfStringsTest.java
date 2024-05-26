@@ -18,7 +18,7 @@ public class NumberOfStringsTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("strings.Strings");
 
-		Assertions.assertEquals(4, a.getStringLiteralsQty());
+		Assertions.assertEquals(4, a.othersResult.getStringLiteralsQty());
 
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getStringLiteralsQty());
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getStringLiteralsQty());

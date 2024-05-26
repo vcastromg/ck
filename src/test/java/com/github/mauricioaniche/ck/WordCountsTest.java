@@ -38,23 +38,23 @@ public class WordCountsTest extends BaseTest {
 
 	@Test
 	public void countAtClassLevel() {
-		Assertions.assertEquals(10, w1.getUniqueWordsQty());
-		Assertions.assertEquals(13, w2.getUniqueWordsQty());
+		Assertions.assertEquals(10, w1.othersResult.getUniqueWordsQty());
+		Assertions.assertEquals(13, w2.othersResult.getUniqueWordsQty());
 	}
 
 	// related to issue #34
 	@Test
 	public void subclasses() {
 		Assertions.assertEquals(7, w3.getMethod("m2/0").get().getUniqueWordsQty());
-		Assertions.assertEquals(10, w3.getUniqueWordsQty());
+		Assertions.assertEquals(10, w3.othersResult.getUniqueWordsQty());
 
 		// numbers in the subclass
 		CKClassResult subclass = report.get("wordcounts.WordCounts3$1X");
 		Assertions.assertEquals(3, subclass.getMethod("xxx/0").get().getUniqueWordsQty());
-		Assertions.assertEquals(4, subclass.getUniqueWordsQty());
+		Assertions.assertEquals(4, subclass.othersResult.getUniqueWordsQty());
 
 		CKClassResult subclass2 = report.get("wordcounts.WordCounts3$Y");
 		Assertions.assertEquals(2, subclass2.getMethod("yyy/0").get().getUniqueWordsQty());
-		Assertions.assertEquals(3, subclass2.getUniqueWordsQty());
+		Assertions.assertEquals(3, subclass2.othersResult.getUniqueWordsQty());
 	}
 }

@@ -29,7 +29,7 @@ public class VisibleMethodsTest extends BaseTest{
     @Test
     public void countNonVisible() {
         CKClassResult a = report.get("VisibleMethods.VisibleMethods");
-        assertEquals(4, a.getNumberOfMethods() - a.getNumberOfVisibleMethods());
+        assertEquals(4, a.methodCountingResult.getNumberOfMethods() - a.getNumberOfVisibleMethods());
     }
 
     @Test

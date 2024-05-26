@@ -18,7 +18,7 @@ public class NumberOfVariablesTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("variables.Variables");
 
-		Assertions.assertEquals(8, a.getVariablesQty());
+		Assertions.assertEquals(8, a.othersResult.getVariablesQty());
 
 		Assertions.assertEquals(4, a.getMethod("m1/0").get().getVariablesQty());
 		Assertions.assertEquals(4, a.getMethod("m2/0").get().getVariablesQty());

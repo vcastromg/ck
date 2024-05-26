@@ -19,7 +19,7 @@ public class NumberOfLogStatementsTest extends BaseTest {
     public void testCountLogStatementsFile() {
         CKClassResult a = report.get("logs.LogStatements");
 
-        assertEquals(4, a.getNumberOfLogStatements());
+        assertEquals(4, a.othersResult.getNumberOfLogStatements());
 
         assertEquals(1, a.getMethod("m1/0").get().getLogStatementsQty());
         assertEquals(0, a.getMethod("m2/0").get().getLogStatementsQty());
@@ -29,12 +29,12 @@ public class NumberOfLogStatementsTest extends BaseTest {
     @Test
     public void testCountLog4JHelloWorldFile() {
         CKClassResult a = report.get("logs.Log4JHelloWorld");
-        assertEquals(7, a.getNumberOfLogStatements());
+        assertEquals(7, a.othersResult.getNumberOfLogStatements());
     }
 
     @Test
     public void testCountSLF4JFile() {
         CKClassResult a = report.get("logs.SLF4JExample");
-        assertEquals(5, a.getNumberOfLogStatements());
+        assertEquals(5, a.othersResult.getNumberOfLogStatements());
     }
 }

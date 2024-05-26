@@ -17,18 +17,18 @@ public class NOSITest extends BaseTest {
 	@Test
 	public void staticInvocations() {
 		CKClassResult a = report.get("nosi.Class2");
-		Assertions.assertEquals(1, a.getNosi());
+		Assertions.assertEquals(1, a.othersResult.getNosi());
 	}
 
 	@Test
 	public void staticInvocationsToMethodsInTheSameClass() {
 		CKClassResult a = report.get("nosi.Class3");
-		Assertions.assertEquals(2, a.getNosi());
+		Assertions.assertEquals(2, a.othersResult.getNosi());
 	}
 
 	@Test
 	public void doesNotUnderstandWhenNotResolvable() {
 		CKClassResult a = report.get("nosi.Class1");
-		Assertions.assertEquals(0, a.getNosi());
+		Assertions.assertEquals(0, a.othersResult.getNosi());
 	}
 }

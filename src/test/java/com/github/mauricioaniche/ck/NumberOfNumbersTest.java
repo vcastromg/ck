@@ -18,7 +18,7 @@ public class NumberOfNumbersTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("numbers.Numbers");
 
-		Assertions.assertEquals(5, a.getNumbersQty());
+		Assertions.assertEquals(5, a.othersResult.getNumbersQty());
 
 		Assertions.assertEquals(5, a.getMethod("m1/0").get().getNumbersQty());
 		Assertions.assertEquals(0, a.getMethod("m2/0").get().getNumbersQty());

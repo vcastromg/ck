@@ -20,43 +20,43 @@ public class TightClassCohesionTest extends BaseTest {
     @Test
     public void highCohesion() {
         CKClassResult ckClass = report.get("ClassCohesion.HighCohesion");
-        assertEquals(1f, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(1f, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 
     @Test
     public void noCohesion() {
         CKClassResult ckClass = report.get("ClassCohesion.NoCohesion");
-        assertEquals(0f, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(0f, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 
     @Test
     public void mediumCohesion1() {
         CKClassResult ckClass = report.get("ClassCohesion.MediumCohesion");
-        assertEquals(2f / 6f, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(2f / 6f, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 
     @Test
     public void mediumCohesion2() {
         CKClassResult ckClass = report.get("ClassCohesion.Simple1");
-        assertEquals(2f / 10f, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(2f / 10f, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 
     @Test
     public void mediumCohesion3() {
         CKClassResult ckClass = report.get("ClassCohesion.Simple2");
-        assertEquals(4f / 10f, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(4f / 10f, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 
     @Test
     public void hugeClassCohesion(){
         Map<String, CKClassResult> reportHuge = run(fixturesDir() + "/real-world-huge-class");
         CKClassResult ckClass = reportHuge.get("com.satoshilabs.trezor.lib.protobuf.TrezorMessage");
-        assertTrue(ckClass.getTightClassCohesion() < 0.000001f);
+        assertTrue(ckClass.ooResult.getTightClassCohesion() < 0.000001f);
     }
 
     @Test
     public void noVisibleMethods(){
         CKClassResult ckClass = report.get("ClassCohesion.NoVisibleMethods");
-        assertEquals(-1, ckClass.getTightClassCohesion(),0.0000001);
+        assertEquals(-1, ckClass.ooResult.getTightClassCohesion(),0.0000001);
     }
 }

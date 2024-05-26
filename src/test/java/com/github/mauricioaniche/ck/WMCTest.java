@@ -21,9 +21,9 @@ public class WMCTest extends BaseTest {
 		CKClassResult b = report.get("wmc.CC2");
 		CKClassResult c = report.get("wmc.CC3");
 
-		Assertions.assertEquals(7, a.getWmc());
-		Assertions.assertEquals(6, b.getWmc());
-		Assertions.assertEquals(11, c.getWmc());
+		Assertions.assertEquals(7, a.ooResult.getWmc());
+		Assertions.assertEquals(6, b.ooResult.getWmc());
+		Assertions.assertEquals(11, c.ooResult.getWmc());
 
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getWmc());
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getWmc());
@@ -37,7 +37,7 @@ public class WMCTest extends BaseTest {
 	public void doNotCountSubClassesCode() {
 		CKClassResult c = report.get("wmc.CC4");
 		Assertions.assertEquals(11, c.getMethod("m1/0").get().getWmc());
-		Assertions.assertEquals(11, c.getWmc());
+		Assertions.assertEquals(11, c.ooResult.getWmc());
 
 		CKClassResult c2 = report.get("wmc.CC4$1MethodInner");
 		Assertions.assertEquals(3, c2.getMethod("print/0").get().getWmc());
@@ -50,7 +50,7 @@ public class WMCTest extends BaseTest {
 	@Test
 	public void inlineConditions() {
 		CKClassResult c = report.get("wmc.CC6");
-		Assertions.assertEquals(7, c.getWmc());
+		Assertions.assertEquals(7, c.ooResult.getWmc());
 
 		Assertions.assertEquals(3, c.getMethod("m1/1[int]").get().getWmc());
 		Assertions.assertEquals(4, c.getMethod("m2/1[int]").get().getWmc());
@@ -77,7 +77,7 @@ public class WMCTest extends BaseTest {
 		Assertions.assertEquals(3, c.getMethod("m5/0").get().getWmc());
 		Assertions.assertEquals(6, c.getMethod("m6/0").get().getWmc());
 
-		Assertions.assertEquals(3+6+6+6+2+3+6, c.getWmc());
+		Assertions.assertEquals(3+6+6+6+2+3+6, c.ooResult.getWmc());
 
 	}
 
@@ -98,7 +98,7 @@ public class WMCTest extends BaseTest {
 		Assertions.assertEquals(8, c.getMethod("m9/0").get().getWmc());
 
 		// the final 2 is for the two other util methods we have there
-		Assertions.assertEquals(1+2+3+2+4+8+9+5+4+8 + 2, c.getWmc());
+		Assertions.assertEquals(1+2+3+2+4+8+9+5+4+8 + 2, c.ooResult.getWmc());
 
 	}
 

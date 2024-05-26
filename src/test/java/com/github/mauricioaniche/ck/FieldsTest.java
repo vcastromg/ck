@@ -17,51 +17,51 @@ public class FieldsTest extends BaseTest {
     @Test
     public void all() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(10, a.getNumberOfFields());
+        Assertions.assertEquals(10, a.fieldCountingResult.getNumberOfFields());
     }
 
     @Test
     public void allPublic() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(3, a.getNumberOfPublicFields());
+        Assertions.assertEquals(3, a.fieldCountingResult.getNumberOfPublicFields());
     }
 
     @Test
     public void allStatic() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(3, a.getNumberOfStaticFields());
+        Assertions.assertEquals(3, a.fieldCountingResult.getNumberOfStaticFields());
     }
 
 
     @Test
     public void allPrivate() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(4, a.getNumberOfPrivateFields());
+        Assertions.assertEquals(4, a.fieldCountingResult.getNumberOfPrivateFields());
     }
 
 
     @Test
     public void allDefault() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(2, a.getNumberOfDefaultFields());
+        Assertions.assertEquals(2, a.fieldCountingResult.getNumberOfDefaultFields());
     }
 
     @Test
     public void allSynchronized() {
         CKClassResult a = report.get("fields.Fields");
-        Assertions.assertEquals(1, a.getNumberOfSynchronizedFields());
+        Assertions.assertEquals(1, a.fieldCountingResult.getNumberOfSynchronizedFields());
     }
 
     @Test
     public void allProtected() {
         CKClassResult a = report.get(("fields.Fields"));
-        Assertions.assertEquals(1, a.getNumberOfProtectedFields());
+        Assertions.assertEquals(1, a.fieldCountingResult.getNumberOfProtectedFields());
     }
 
     @Test
     public void AllFinal() {
         CKClassResult a = report.get(("fields.Fields"));
-        Assertions.assertEquals(1, a.getNumberOfFinalFields());
+        Assertions.assertEquals(1, a.fieldCountingResult.getNumberOfFinalFields());
 
     }
 }

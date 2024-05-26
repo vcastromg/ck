@@ -18,7 +18,7 @@ public class NumberOfReturnsTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("returns.Returns");
 
-		Assertions.assertEquals(6, a.getReturnQty());
+		Assertions.assertEquals(6, a.othersResult.getReturnQty());
 
 		Assertions.assertEquals(3, a.getMethod("m1/0").get().getReturnQty());
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getReturnQty());
