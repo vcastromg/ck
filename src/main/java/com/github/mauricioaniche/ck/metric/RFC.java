@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import com.github.mauricioaniche.ck.util.JDTUtils;
 import org.eclipse.jdt.core.dom.*;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ public class RFC implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setRfc(methodInvocations.size());
+		result.ooResult.setRfc(methodInvocations.size());
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.Modifier;
 
@@ -57,14 +57,14 @@ public class NumberOfFields implements CKASTVisitor, ClassLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setNumberOfFields(fields);
+		result.fieldCountingResult.setNumberOfFields(fields);
 		result.setFieldNames(fieldNames);
-		result.setNumberOfStaticFields(staticFields);
-		result.setNumberOfPublicFields(publicFields);
-		result.setNumberOfPrivateFields(privateFields);
-		result.setNumberOfProtectedFields(protectedFields);
-		result.setNumberOfDefaultFields(defaultFields);
-		result.setNumberOfFinalFields(finalFields);
-		result.setNumberOfSynchronizedFields(synchronizedFields);
+		result.fieldCountingResult.setNumberOfStaticFields(staticFields);
+		result.fieldCountingResult.setNumberOfPublicFields(publicFields);
+		result.fieldCountingResult.setNumberOfPrivateFields(privateFields);
+		result.fieldCountingResult.setNumberOfProtectedFields(protectedFields);
+		result.fieldCountingResult.setNumberOfDefaultFields(defaultFields);
+		result.fieldCountingResult.setNumberOfFinalFields(finalFields);
+		result.fieldCountingResult.setNumberOfSynchronizedFields(synchronizedFields);
 	}
 }

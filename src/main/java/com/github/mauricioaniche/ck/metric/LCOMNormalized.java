@@ -2,17 +2,14 @@ package com.github.mauricioaniche.ck.metric;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.TreeSet;
 
 import org.eclipse.jdt.core.dom.FieldDeclaration;
-import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import com.github.mauricioaniche.ck.util.JDTUtils;
 
 public class LCOMNormalized implements CKASTVisitor, ClassLevelMetric {
@@ -101,7 +98,7 @@ public class LCOMNormalized implements CKASTVisitor, ClassLevelMetric {
 		if(numberOfAttributes > 0)
 			lcomNormalized = (((float) 1) * sum) / numberOfAttributes;
 		
-		result.setLcomNormalized(lcomNormalized);
+		result.ooResult.setLcomNormalized(lcomNormalized);
 		
 	}	
 	

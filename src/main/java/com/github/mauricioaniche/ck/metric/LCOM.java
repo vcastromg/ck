@@ -1,6 +1,6 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.eclipse.jdt.core.dom.*;
 
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class LCOM implements CKASTVisitor, ClassLevelMetric {
 				if (intersection.size() == 0) lcom++;
 				else lcom--;
 		    }
-		result.setLcom(lcom > 0 ? lcom : 0);
+		result.ooResult.setLcom(lcom > 0 ? lcom : 0);
 	}
 
 }

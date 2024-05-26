@@ -12,6 +12,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.junit.jupiter.api.Test;
 
 class IndividualFilesWithContextTest {

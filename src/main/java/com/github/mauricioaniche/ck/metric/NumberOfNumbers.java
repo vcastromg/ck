@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.eclipse.jdt.core.dom.NumberLiteral;
 
 public class NumberOfNumbers implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
@@ -20,6 +20,6 @@ public class NumberOfNumbers implements CKASTVisitor, ClassLevelMetric, MethodLe
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setNumbersQty(qty);
+		result.othersResult.setNumbersQty(qty);
 	}
 }

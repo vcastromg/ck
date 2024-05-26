@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.eclipse.jdt.core.dom.*;
 
 public class NumberOfInnerClassesLambdasAndAnonymousClasses implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
@@ -45,9 +45,9 @@ public class NumberOfInnerClassesLambdasAndAnonymousClasses implements CKASTVisi
 	@Override
 	public void setResult(CKClassResult result) {
 		// the -1 there is because the main type under analysis here is counted as +1.
-		result.setAnonymousClassesQty(anonymousClassesQty - (firstFound.equals("anonymous")?1:0));
-		result.setInnerClassesQty(innerClassesQty - (firstFound.equals("type") || firstFound.equals("enum")?1:0));
-		result.setLambdasQty(lambdasQty - (firstFound.equals("lambda")?1:0));
+		result.othersResult.setAnonymousClassesQty(anonymousClassesQty - (firstFound.equals("anonymous")?1:0));
+		result.othersResult.setInnerClassesQty(innerClassesQty - (firstFound.equals("type") || firstFound.equals("enum")?1:0));
+		result.othersResult.setLambdasQty(lambdasQty - (firstFound.equals("lambda")?1:0));
 	}
 
 	@Override

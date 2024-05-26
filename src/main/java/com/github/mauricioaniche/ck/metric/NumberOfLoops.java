@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.eclipse.jdt.core.dom.*;
 
 public class NumberOfLoops implements CKASTVisitor, ClassLevelMetric, MethodLevelMetric {
@@ -32,6 +32,6 @@ public class NumberOfLoops implements CKASTVisitor, ClassLevelMetric, MethodLeve
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setLoopQty(qty);
+		result.othersResult.setLoopQty(qty);
 	}
 }

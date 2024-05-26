@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.eclipse.jdt.core.dom.*;
 
 import java.util.Stack;
@@ -200,6 +200,6 @@ public class NumberOfMaxNestedBlock implements CKASTVisitor, ClassLevelMetric, M
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setMaxNestedBlocks(Math.max(0, max - 1));
+		result.othersResult.setMaxNestedBlocks(Math.max(0, max - 1));
 	}
 }

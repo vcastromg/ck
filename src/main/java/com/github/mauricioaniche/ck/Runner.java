@@ -1,5 +1,6 @@
 package com.github.mauricioaniche.ck;
 
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import com.github.mauricioaniche.ck.util.FileUtils;
 
 import java.io.IOException;

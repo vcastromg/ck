@@ -1,5 +1,6 @@
 package com.github.mauricioaniche.ck;
 
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import com.google.common.collect.Sets;
 
 import org.junit.jupiter.api.BeforeAll;

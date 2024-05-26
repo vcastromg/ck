@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.integration;
 
 import com.github.mauricioaniche.ck.CK;
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import com.github.mauricioaniche.ck.CKNotifier;
 import com.google.common.io.Files;
 import org.apache.commons.io.FileUtils;

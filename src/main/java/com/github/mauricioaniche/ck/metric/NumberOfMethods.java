@@ -1,6 +1,6 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.Modifier;
 
@@ -56,15 +56,15 @@ public class NumberOfMethods implements CKASTVisitor, ClassLevelMetric {
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setNumberOfMethods(methods);
-		result.setNumberOfStaticMethods(staticMethods);
-		result.setNumberOfPublicMethods(publicMethods);
-		result.setNumberOfPrivateMethods(privateMethods);
-		result.setNumberOfProtectedMethods(protectedMethods);
-		result.setNumberOfDefaultMethods(defaultMethods);
-		result.setNumberOfAbstractMethods(abstractMethods);
-		result.setNumberOfFinalMethods(finalMethods);
-		result.setNumberOfSynchronizedMethods(synchronizedMethods);
+		result.methodCountingResult.setNumberOfMethods(methods);
+		result.methodCountingResult.setNumberOfStaticMethods(staticMethods);
+		result.methodCountingResult.setNumberOfPublicMethods(publicMethods);
+		result.methodCountingResult.setNumberOfPrivateMethods(privateMethods);
+		result.methodCountingResult.setNumberOfProtectedMethods(protectedMethods);
+		result.methodCountingResult.setNumberOfDefaultMethods(defaultMethods);
+		result.methodCountingResult.setNumberOfAbstractMethods(abstractMethods);
+		result.methodCountingResult.setNumberOfFinalMethods(finalMethods);
+		result.methodCountingResult.setNumberOfSynchronizedMethods(synchronizedMethods);
 
 	}
 }

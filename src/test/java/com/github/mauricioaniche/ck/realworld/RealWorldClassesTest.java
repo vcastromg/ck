@@ -1,9 +1,8 @@
 package com.github.mauricioaniche.ck.realworld;
 
 import com.github.mauricioaniche.ck.BaseTest;
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
-import com.github.mauricioaniche.ck.metric.MethodLevelMetric;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -32,7 +31,7 @@ public class RealWorldClassesTest extends BaseTest {
 
 		CKClassResult ck = report.get("debug.CSVParser");
 
-		for (com.github.mauricioaniche.ck.CKMethodResult CKMethodResult : ck.getMethods()) {
+		for (com.github.mauricioaniche.ck.result.CKMethodResult CKMethodResult : ck.getMethods()) {
 
 			for (Map.Entry<String, Integer> entry : CKMethodResult.getVariablesUsage().entrySet()) {
 				System.out.println("- variable: " + entry.getKey());

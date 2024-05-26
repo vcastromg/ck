@@ -2,6 +2,7 @@ package com.github.mauricioaniche.ck;
 
 import com.github.mauricioaniche.ck.metric.CKASTVisitor;
 import com.github.mauricioaniche.ck.metric.ClassLevelMetric;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.eclipse.jdt.core.dom.*;
 
 public class ASTDebugger implements CKASTVisitor, ClassLevelMetric {

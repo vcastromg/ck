@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.eclipse.jdt.core.dom.InfixExpression;
 
 import java.util.Arrays;
@@ -32,6 +32,6 @@ public class NumberOfMathOperators implements CKASTVisitor, ClassLevelMetric, Me
 
 	@Override
 	public void setResult(CKClassResult result) {
-		result.setMathOperationsQty(qty);
+		result.othersResult.setMathOperationsQty(qty);
 	}
 }
