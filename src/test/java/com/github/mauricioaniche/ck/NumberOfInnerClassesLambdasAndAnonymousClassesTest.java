@@ -18,9 +18,9 @@ public class NumberOfInnerClassesLambdasAndAnonymousClassesTest extends BaseTest
 	public void count() {
 		CKClassResult a = report.get("innerclasses.MessyClass");
 
-		Assertions.assertEquals(2, a.getAnonymousClassesQty());
-		Assertions.assertEquals(1, a.getLambdasQty());
-		Assertions.assertEquals(3, a.getInnerClassesQty());
+		Assertions.assertEquals(2, a.othersResult.getAnonymousClassesQty());
+		Assertions.assertEquals(1, a.othersResult.getLambdasQty());
+		Assertions.assertEquals(3, a.othersResult.getInnerClassesQty());
 
 		Assertions.assertEquals(0, a.getMethod("m1/0").get().getAnonymousClassesQty());
 		Assertions.assertEquals(0, a.getMethod("m1/0").get().getLambdasQty());
@@ -53,9 +53,9 @@ public class NumberOfInnerClassesLambdasAndAnonymousClassesTest extends BaseTest
 
 		CKClassResult a = report.get("innerclasses.SC2");
 		// the innerclass is inside the anonymous method inside the method (two levels below...), and not the class...
-		Assertions.assertEquals(0, a.getInnerClassesQty());
-		Assertions.assertEquals(1, a.getAnonymousClassesQty());
-		Assertions.assertEquals(0, a.getLambdasQty());
+		Assertions.assertEquals(0, a.othersResult.getInnerClassesQty());
+		Assertions.assertEquals(1, a.othersResult.getAnonymousClassesQty());
+		Assertions.assertEquals(0, a.othersResult.getLambdasQty());
 
 		Assertions.assertEquals(1, a.getMethod("m1/0").get().getAnonymousClassesQty());
 		Assertions.assertEquals(0, a.getMethod("m1/0").get().getInnerClassesQty());
@@ -63,14 +63,14 @@ public class NumberOfInnerClassesLambdasAndAnonymousClassesTest extends BaseTest
 
 		CKClassResult b = report.get("innerclasses.SC2$Anonymous1");
 		Assertions.assertEquals(1, b.getMethod("toString/0").get().getInnerClassesQty());
-		Assertions.assertEquals(1, b.getInnerClassesQty());
-		Assertions.assertEquals(0, b.getLambdasQty());
-		Assertions.assertEquals(0, b.getAnonymousClassesQty());
+		Assertions.assertEquals(1, b.othersResult.getInnerClassesQty());
+		Assertions.assertEquals(0, b.othersResult.getLambdasQty());
+		Assertions.assertEquals(0, b.othersResult.getAnonymousClassesQty());
 
 		CKClassResult sc = report.get("innerclasses.SC2$1$1X");
 		Assertions.assertNotNull(sc);
-		Assertions.assertEquals(0, sc.getInnerClassesQty());
-		Assertions.assertEquals(0, sc.getLambdasQty());
-		Assertions.assertEquals(0, sc.getAnonymousClassesQty());
+		Assertions.assertEquals(0, sc.othersResult.getInnerClassesQty());
+		Assertions.assertEquals(0, sc.othersResult.getLambdasQty());
+		Assertions.assertEquals(0, sc.othersResult.getAnonymousClassesQty());
 	}
 }

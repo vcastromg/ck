@@ -18,16 +18,16 @@ public class LCOMTest extends BaseTest {
 	public void should_count_lcom() {
 		
 		CKClassResult a = report.get("lcom.TripStatusBean");
-		Assertions.assertEquals(1415, a.getLcom());
+		Assertions.assertEquals(1415, a.ooResult.getLcom());
 
 		CKClassResult b = report.get("lcom.SimpleGetterAndSetter");
-		Assertions.assertEquals(0, b.getLcom());
+		Assertions.assertEquals(0, b.ooResult.getLcom());
 
 		CKClassResult c = report.get("lcom.SimpleGetterAndSetter2");
-		Assertions.assertEquals(2, c.getLcom());
+		Assertions.assertEquals(2, c.ooResult.getLcom());
 
 		CKClassResult d = report.get("lcom.TermsOfServiceController");
-		Assertions.assertEquals(0, d.getLcom());
+		Assertions.assertEquals(0, d.ooResult.getLcom());
 
 	}
 	

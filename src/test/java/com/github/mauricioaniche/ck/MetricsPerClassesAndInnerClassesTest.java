@@ -20,28 +20,28 @@ public class MetricsPerClassesAndInnerClassesTest extends BaseTest {
 		Assertions.assertEquals(9, report.values().size());
 
 		CKClassResult a = report.get("innerclasses.MessyClass");
-		Assertions.assertEquals(6, a.getNumberOfMethods());
+		Assertions.assertEquals(6, a.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("class", a.getType());
 
 		CKClassResult sc1 = report.get("innerclasses.MessyClass$InnerClass1");
-		Assertions.assertEquals(2, sc1.getNumberOfMethods());
+		Assertions.assertEquals(2, sc1.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals(2, sc1.getMethods().stream().filter(x -> x.getMethodName().equals("m1/0")).findFirst().get().getMaxNestedBlocks());
 		Assertions.assertEquals("innerclass", sc1.getType());
 
 		CKClassResult sc2 = report.get("innerclasses.MessyClass$InnerClass2");
-		Assertions.assertEquals(3, sc2.getNumberOfMethods());
+		Assertions.assertEquals(3, sc2.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("innerclass", sc2.getType());
 
 		CKClassResult sc3 = report.get("innerclasses.MessyClass$1InnerClass3");
-		Assertions.assertEquals(1, sc3.getNumberOfMethods());
+		Assertions.assertEquals(1, sc3.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("innerclass", sc3.getType());
 
 		CKClassResult an1 = report.get("innerclasses.MessyClass$Anonymous1");
-		Assertions.assertEquals(1, an1.getNumberOfMethods());
+		Assertions.assertEquals(1, an1.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("anonymous", an1.getType());
 
 		CKClassResult an2 = report.get("innerclasses.MessyClass$Anonymous2");
-		Assertions.assertEquals(2, an2.getNumberOfMethods());
+		Assertions.assertEquals(2, an2.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("anonymous", an2.getType());
 
 

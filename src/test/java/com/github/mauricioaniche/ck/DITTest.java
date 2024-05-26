@@ -23,34 +23,34 @@ public class DITTest extends BaseTest {
 	@Test
 	public void everyOneHasObjectAsFather() {
 		CKClassResult a = report.get("dit.A");
-		Assertions.assertEquals(1, a.getDit());
+		Assertions.assertEquals(1, a.ooResult.getDit());
 	}
 
 	@Test
 	public void firstLevelInheritance() {
 		CKClassResult b = report.get("dit.B");
-		Assertions.assertEquals(2, b.getDit());
+		Assertions.assertEquals(2, b.ooResult.getDit());
 	}
 	
 	@Test
 	public void twoLevelsInheritance() {
 		CKClassResult c = report.get("dit.C");
-		Assertions.assertEquals(3, c.getDit());
+		Assertions.assertEquals(3, c.ooResult.getDit());
 
 		CKClassResult c2 = report.get("dit.C2");
-		Assertions.assertEquals(3, c2.getDit());
+		Assertions.assertEquals(3, c2.ooResult.getDit());
 	}
 	
 	@Test
 	public void threeLevelsInheritance() {
 		CKClassResult d = report.get("dit.D");
-		Assertions.assertEquals(4, d.getDit());
+		Assertions.assertEquals(4, d.ooResult.getDit());
 	}
 	
 	@Test
 	public void countEvenClassesNotResolved() {
 		CKClassResult a = report.get("dit.X");
-		Assertions.assertEquals(2, a.getDit());
+		Assertions.assertEquals(2, a.ooResult.getDit());
 	}
 
 }

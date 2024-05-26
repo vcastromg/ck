@@ -29,7 +29,7 @@ public class ModifiersTest extends BaseTest {
 	
 	@Test
 	public void testClassIsAbstract() {
-		assertTrue(Modifier.isAbstract(classResult.getModifiers()));
+		assertTrue(Modifier.isAbstract(classResult.othersResult.getModifiers()));
 	}
 	
 	@Test

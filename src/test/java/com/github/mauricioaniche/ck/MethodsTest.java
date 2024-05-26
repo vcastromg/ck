@@ -20,57 +20,57 @@ public class MethodsTest extends BaseTest {
     @Test
     public void all() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(9, a.getNumberOfMethods());
+        Assertions.assertEquals(9, a.methodCountingResult.getNumberOfMethods());
     }
 
     @Test
     public void allPublic() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(4, a.getNumberOfPublicMethods());
+        Assertions.assertEquals(4, a.methodCountingResult.getNumberOfPublicMethods());
     }
 
     @Test
     public void allStatic() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(2, a.getNumberOfStaticMethods());
+        Assertions.assertEquals(2, a.methodCountingResult.getNumberOfStaticMethods());
     }
 
     @Test
     public void allDefault() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(1, a.getNumberOfDefaultMethods());
+        Assertions.assertEquals(1, a.methodCountingResult.getNumberOfDefaultMethods());
     }
 
     @Test
     public void allPrivate() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(3, a.getNumberOfPrivateMethods());
+        Assertions.assertEquals(3, a.methodCountingResult.getNumberOfPrivateMethods());
     }
 
     @Test
     public void allProtected() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(1, a.getNumberOfProtectedMethods());
+        Assertions.assertEquals(1, a.methodCountingResult.getNumberOfProtectedMethods());
     }
 
 
     @Test
     public void allSynchronized() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(1, a.getNumberOfSynchronizedMethods());
+        Assertions.assertEquals(1, a.methodCountingResult.getNumberOfSynchronizedMethods());
     }
 
     @Test
     public void allAbstract() {
         CKClassResult a = report.get("methods.Methods2");
-        Assertions.assertEquals(3, a.getNumberOfMethods());
-        Assertions.assertEquals(2, a.getNumberOfAbstractMethods());
+        Assertions.assertEquals(3, a.methodCountingResult.getNumberOfMethods());
+        Assertions.assertEquals(2, a.methodCountingResult.getNumberOfAbstractMethods());
     }
 
     @Test
     public void constructors() {
         CKClassResult a = report.get("methods.Methods3");
-        Assertions.assertEquals(3, a.getNumberOfMethods());
+        Assertions.assertEquals(3, a.methodCountingResult.getNumberOfMethods());
         Assertions.assertEquals(3, a.getMethods().size());
 
         CKMethodResult m1 = a.getMethods().stream().filter(x -> x.getMethodName().equals("Methods3/0")).findFirst().get();
@@ -110,6 +110,6 @@ public class MethodsTest extends BaseTest {
     @Test
     public void allFinal() {
         CKClassResult a = report.get("methods.Methods");
-        Assertions.assertEquals(1, a.getNumberOfFinalMethods());
+        Assertions.assertEquals(1, a.methodCountingResult.getNumberOfFinalMethods());
     }
 }

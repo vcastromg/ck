@@ -56,7 +56,7 @@ public class RealWorldClassesTest extends BaseTest {
 	public void xmlInputFactory() {
 
 		CKClassResult a = report.get("javax.xml.stream.XMLInputFactory");
-		Assertions.assertEquals(29, a.getNumberOfMethods());
+		Assertions.assertEquals(29, a.methodCountingResult.getNumberOfMethods());
 
 		Optional<CKMethodResult> m1 = a.getMethod("getXMLReporter/0");
 		Assertions.assertTrue(org.eclipse.jdt.core.dom.Modifier.isAbstract(m1.get().getModifiers()));
@@ -70,7 +70,7 @@ public class RealWorldClassesTest extends BaseTest {
 	public void factoryFinder() {
 
 		CKClassResult a = report.get("javax.xml.ws.spi.FactoryFinder");
-		Assertions.assertEquals(3, a.getNumberOfMethods());
+		Assertions.assertEquals(3, a.methodCountingResult.getNumberOfMethods());
 	}
 
 	// this was crashing, also related to the bug explained in the
@@ -78,7 +78,7 @@ public class RealWorldClassesTest extends BaseTest {
 	@Test
 	public void xmlOutputFactory() {
 		CKClassResult a = report.get("javax.xml.stream.XMLOutputFactory");
-		Assertions.assertEquals(14, a.getNumberOfMethods());
+		Assertions.assertEquals(14, a.methodCountingResult.getNumberOfMethods());
 	}
 
 	// this was crashing, also related to the bug explained in the
@@ -104,7 +104,7 @@ public class RealWorldClassesTest extends BaseTest {
 		CKClassResult b = report.get("com.hry.spring.grpc.simple.GreeterGrpc$GreeterImplBase");
 		Assertions.assertNotNull(b);
 
-		Assertions.assertEquals(2, b.getNumberOfMethods());
+		Assertions.assertEquals(2, b.methodCountingResult.getNumberOfMethods());
 
 		CKClassResult c = report.get("com.hry.spring.grpc.simple.GreeterGrpc$GreeterBlockingStub");
 		Assertions.assertNotNull(c);
@@ -116,8 +116,8 @@ public class RealWorldClassesTest extends BaseTest {
 	public void abstractSimpleHandler() {
 		CKClassResult a = report.get("com.firefly.net.tcp.AbstractSimpleHandler");
 		Assertions.assertNotNull(a);
-		Assertions.assertEquals(3, a.getNumberOfMethods());
-		Assertions.assertEquals(3, a.getNumberOfFields());
+		Assertions.assertEquals(3, a.methodCountingResult.getNumberOfMethods());
+		Assertions.assertEquals(3, a.fieldCountingResult.getNumberOfFields());
 	}
 
 	// one more test case for the same case above. Redundant.
@@ -134,7 +134,7 @@ public class RealWorldClassesTest extends BaseTest {
 		CKClassResult a = report.get("org.apache.commons.beanutils2.BeanificationTestCase$1TestIndependenceThread");
 		Assertions.assertNotNull(a);
 
-		Assertions.assertEquals(3, a.getNumberOfMethods());
+		Assertions.assertEquals(3, a.methodCountingResult.getNumberOfMethods());
 		Assertions.assertEquals("innerclass", a.getType());
 	}
 
@@ -165,23 +165,23 @@ public class RealWorldClassesTest extends BaseTest {
 	public void executorUtils() {
 		CKClassResult class1 = report.get("org.apache.commons.lang.functor.ExecutorUtils");
 		Assertions.assertNotNull(class1);
-		Assertions.assertFalse(isStatic(class1.getModifiers()));
+		Assertions.assertFalse(isStatic(class1.othersResult.getModifiers()));
 
 		CKClassResult class2 = report.get("org.apache.commons.lang.functor.ExecutorUtils$ChainedExecutor");
 		Assertions.assertNotNull(class2);
-		Assertions.assertTrue(isStatic(class2.getModifiers()));
+		Assertions.assertTrue(isStatic(class2.othersResult.getModifiers()));
 
 		CKClassResult class3 = report.get("org.apache.commons.lang.functor.ExecutorUtils$SwitchExecutor");
 		Assertions.assertNotNull(class3);
-		Assertions.assertTrue(isStatic(class3.getModifiers()));
+		Assertions.assertTrue(isStatic(class3.othersResult.getModifiers()));
 
 		CKClassResult class4 = report.get("org.apache.commons.lang.functor.ExecutorUtils$ForExecutor");
 		Assertions.assertNotNull(class4);
-		Assertions.assertTrue(isStatic(class4.getModifiers()));
+		Assertions.assertTrue(isStatic(class4.othersResult.getModifiers()));
 
 		CKClassResult class5 = report.get("org.apache.commons.lang.functor.ExecutorUtils$WhileExecutor");
 		Assertions.assertNotNull(class5);
-		Assertions.assertTrue(isStatic(class5.getModifiers()));
+		Assertions.assertTrue(isStatic(class5.othersResult.getModifiers()));
 
 	}
 

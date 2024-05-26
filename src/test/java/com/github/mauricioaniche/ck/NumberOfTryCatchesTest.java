@@ -18,7 +18,7 @@ public class NumberOfTryCatchesTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("trycatch.TryCatch");
 
-		Assertions.assertEquals(4, a.getTryCatchQty());
+		Assertions.assertEquals(4, a.othersResult.getTryCatchQty());
 
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getTryCatchQty());
 		Assertions.assertEquals(1, a.getMethod("m2/0").get().getTryCatchQty());

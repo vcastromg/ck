@@ -18,7 +18,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 	public void count() {
 		CKClassResult a = report.get("nestedblocks.NestedBlocks");
 
-		Assertions.assertEquals(5, a.getMaxNestedBlocks());
+		Assertions.assertEquals(5, a.othersResult.getMaxNestedBlocks());
 
 		Assertions.assertEquals(5, a.getMethod("m1/0").get().getMaxNestedBlocks());
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getMaxNestedBlocks());
@@ -33,7 +33,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 		Assertions.assertEquals(2, a.getMethod("m2/0").get().getMaxNestedBlocks());
 		Assertions.assertEquals(0, a.getMethod("m3/0").get().getMaxNestedBlocks());
 
-		Assertions.assertEquals(5, a.getMaxNestedBlocks());
+		Assertions.assertEquals(5, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -42,7 +42,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 
 		Assertions.assertEquals(5, a.getMethod("m1/0").get().getMaxNestedBlocks());
 
-		Assertions.assertEquals(5, a.getMaxNestedBlocks());
+		Assertions.assertEquals(5, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -52,7 +52,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 		Assertions.assertEquals(4, a.getMethod("m1/0").get().getMaxNestedBlocks());
 		Assertions.assertEquals(4, a.getMethod("m2/0").get().getMaxNestedBlocks());
 
-		Assertions.assertEquals(4, a.getMaxNestedBlocks());
+		Assertions.assertEquals(4, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -61,7 +61,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 
 		Assertions.assertEquals(3, a.getMethod("m1/0").get().getMaxNestedBlocks());
 
-		Assertions.assertEquals(3, a.getMaxNestedBlocks());
+		Assertions.assertEquals(3, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 		Assertions.assertEquals(6, a.getMethod("m2/0").get().getMaxNestedBlocks());
 
 
-		Assertions.assertEquals(6, a.getMaxNestedBlocks());
+		Assertions.assertEquals(6, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -83,7 +83,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 		Assertions.assertEquals(2, a.getMethod("m1/0").get().getMaxNestedBlocks());
 
 
-		Assertions.assertEquals(2, a.getMaxNestedBlocks());
+		Assertions.assertEquals(2, a.othersResult.getMaxNestedBlocks());
 	}
 
 	// Basic enums do not have nested blocks
@@ -91,7 +91,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 	public void enums() {
 		CKClassResult a = report.get("nestedblocks.SimpleEnum");
 
-		Assertions.assertEquals(0, a.getMaxNestedBlocks());
+		Assertions.assertEquals(0, a.othersResult.getMaxNestedBlocks());
 	}
 
 	// based on issue #40
@@ -99,7 +99,7 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 	public void classesWithNoMethods() {
 		CKClassResult a = report.get("nestedblocks.NestedBlocks8");
 
-		Assertions.assertEquals(0, a.getMaxNestedBlocks());
+		Assertions.assertEquals(0, a.othersResult.getMaxNestedBlocks());
 	}
 
 	@Test
@@ -112,6 +112,6 @@ public class NumberOfMaxNestedBlocksTest extends BaseTest {
 		Assertions.assertEquals(2, a.getMethod("m4/0").get().getMaxNestedBlocks());
 		Assertions.assertEquals(3, a.getMethod("m5/0").get().getMaxNestedBlocks());
 		Assertions.assertEquals(3, a.getMethod("m6/0").get().getMaxNestedBlocks());
-		Assertions.assertEquals(3, a.getMaxNestedBlocks());
+		Assertions.assertEquals(3, a.othersResult.getMaxNestedBlocks());
 	}
 }
