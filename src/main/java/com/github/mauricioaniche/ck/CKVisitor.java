@@ -3,6 +3,8 @@ package com.github.mauricioaniche.ck;
 import com.github.mauricioaniche.ck.metric.CKASTVisitor;
 import com.github.mauricioaniche.ck.metric.ClassLevelMetric;
 import com.github.mauricioaniche.ck.metric.MethodLevelMetric;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import com.github.mauricioaniche.ck.util.JDTUtils;
 import org.eclipse.jdt.core.dom.*;
 

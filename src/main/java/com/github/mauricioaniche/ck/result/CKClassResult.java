@@ -1,9 +1,7 @@
-package com.github.mauricioaniche.ck;
+package com.github.mauricioaniche.ck.result;
 
 import java.util.*;
 
-import com.github.mauricioaniche.ck.metric.CouplingExtras;
-import com.github.mauricioaniche.ck.metric.NOCExtras;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,5 +1,7 @@
 package com.github.mauricioaniche.ck;
 
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 

@@ -1,6 +1,6 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import com.github.mauricioaniche.ck.util.WordCounter;
 import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
 import org.eclipse.jdt.core.dom.EnumDeclaration;

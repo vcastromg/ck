@@ -1,7 +1,7 @@
 package com.github.mauricioaniche.ck.util;
 
-import com.github.mauricioaniche.ck.CKClassResult;
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import com.github.mauricioaniche.ck.metric.ClassLevelMetric;
 import com.github.mauricioaniche.ck.metric.MethodLevelMetric;
 import com.github.mauricioaniche.ck.metric.RunAfter;

@@ -3,14 +3,12 @@ package com.github.mauricioaniche.ck.metric;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.ParameterizedType;
 import org.eclipse.jdt.core.dom.SimpleType;
 import org.eclipse.jdt.core.dom.Type;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
-import com.github.mauricioaniche.ck.CKClassResult;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 
 public class NOC implements CKASTVisitor, ClassLevelMetric{
 

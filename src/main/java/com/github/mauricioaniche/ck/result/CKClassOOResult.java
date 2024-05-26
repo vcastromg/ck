@@ -1,4 +1,4 @@
-package com.github.mauricioaniche.ck;
+package com.github.mauricioaniche.ck.result;
 
 import com.github.mauricioaniche.ck.metric.CouplingExtras;
 import com.github.mauricioaniche.ck.metric.NOCExtras;

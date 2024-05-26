@@ -1,6 +1,6 @@
 package com.github.mauricioaniche.ck.metric;
 
-import com.github.mauricioaniche.ck.CKMethodResult;
+import com.github.mauricioaniche.ck.result.CKMethodResult;
 import com.github.mauricioaniche.ck.util.WordCounter;
 import org.eclipse.jdt.core.dom.Initializer;
 import org.eclipse.jdt.core.dom.MethodDeclaration;

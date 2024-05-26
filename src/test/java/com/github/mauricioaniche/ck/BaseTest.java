@@ -2,6 +2,7 @@ package com.github.mauricioaniche.ck;
 
 import com.github.mauricioaniche.ck.metric.ClassLevelMetric;
 import com.github.mauricioaniche.ck.metric.MethodLevelMetric;
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

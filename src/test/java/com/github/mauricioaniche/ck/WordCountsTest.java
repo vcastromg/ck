@@ -1,8 +1,7 @@
 package com.github.mauricioaniche.ck;
 
+import com.github.mauricioaniche.ck.result.CKClassResult;
 import org.junit.jupiter.api.*;
-
-import java.util.Map;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class WordCountsTest extends BaseTest {
