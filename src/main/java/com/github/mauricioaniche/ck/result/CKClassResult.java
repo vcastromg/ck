@@ -22,6 +22,7 @@ public class CKClassResult {
     public CKClassResult(String file, String className, String type, int modifiers) {
         this.file = file;
         this.className = className;
+        ooResult.setClassName(className);
         this.type = type;
         this.methods = new HashSet<>();
         this.methodCountingResult.visibleMethods = new HashSet<>();
